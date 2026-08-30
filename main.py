@@ -137,7 +137,7 @@ async def spin(message: Message):
         await db.commit()
 
     # Telegram controls the visual dice value; the prize is calculated above.
-    await message.answer_dice("🎰")
+    await message.answer_dice(emoji="🎰")
     if payout:
         await message.answer(f"✨ {name}: +{payout} очков\nБаланс: {points}")
     else:
