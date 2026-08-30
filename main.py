@@ -110,6 +110,7 @@ async def daily(message: Message):
 async def spin(message: Message):
     async with aiosqlite.connect(DB_PATH) as db:
         await ensure_user(message, db)
+        await db.commit()
         await db.execute("BEGIN IMMEDIATE")
         cursor = await db.execute(
             "UPDATE users SET points=points-? WHERE user_id=? AND points>=?",
