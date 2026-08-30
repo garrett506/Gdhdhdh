@@ -8,7 +8,7 @@ from aiogram import Bot, Dispatcher, F, Router
 from aiogram.filters import Command, CommandStart
 from aiogram.types import Message
 
-TOKEN = os.environ["BOT_TOKEN"]
+TOKEN = "".join(os.environ["BOT_TOKEN"].split())
 DB_PATH = os.getenv("DB_PATH", "casino.sqlite3")
 ADMIN_IDS = {int(x) for x in os.getenv("ADMIN_IDS", "").split(",") if x.strip()}
 SPIN_COST = 25
